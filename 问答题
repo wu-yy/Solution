@@ -1,1 +1,21 @@
+在v9-cpu中如何实现时钟中断的：
+时钟到达timerout、中断使能iena为1时发生时钟中断，此时置中断状态类型trap为FTIMER，iena重置为0，跳转至中断处理程序interrupt。
 
+v9-cpu指令，关键变量描述有误或不全的情况：
+-cycle: 计数周期
+-xcycle: 计数周期对应的pc
+-timer: 时钟计时器
+-timeout: 超时时间阈值
+-ssp: 内核态栈指针
+-usp: 用户态栈指针
+
+在v9-cpu中的跳转相关操作是如何实现的：
+branch：先判断指令条件是否满足，满足则进行跳转，反之则继续运行；
+JMP/JMPI：转置pc为operand0加上立即数，而后跳转；
+JSR/JSRA：在栈中保存当前pc值，而后跳转。
+
+在v9-cpu中如何设计相应指令，可有效实现函数调用与返回：
+利用JSR和JSRA指令进行跳转实现函数调用，函数返回时只需将pc值从栈中保存的地址取出跳转回去即可。
+
+在v9-cpu中如何实现分页机制：
+虚拟地址前十位对应Page Directory中的entry，即为page table；中间十位对应page table中的一项，最后十二位是页内的偏移量。
