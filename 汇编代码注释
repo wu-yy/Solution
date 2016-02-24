@@ -64,7 +64,7 @@ root/usr/funcall.c  15:   while (i--)
 root/usr/funcall.c  16:     out(f, *s++);
 00000028  0000180e  LL    0x18 (D 24)   //a=sp+24
 0000002c  ffffff57  SUBI  0xffffffff (D -1)   //a -= b/operand0/(operand0 + sp) a-=-1;
-00000030  00001840  SL    0x18 (D 24)
+00000030  00001840  SL    0x18 (D 24)   //*（sp+24）=a;
 00000034  ffffff1f  LXC   0xffffffff (D -1)
 00000038  0000009d  PSHA
 0000003c  0000180e  LL    0x18 (D 24)
