@@ -57,13 +57,13 @@ root/usr/funcall.c  13:   ret = 1;
 00000014  00000123  LI    0x1 (D 1)  //LI, // a = operand0  即a=1;
 00000018  00000045  SG    0x0 (D 0)  //(global_addr)=a; global_addr = operand0 + pc 即(operand0+pc)=a=1---ret
 root/usr/funcall.c  14:   i=n;
-0000001c  0000200e  LL    0x20 (D 32) //a=content(local_addr) ; local addr= operand0 + sp ;即a=n;
+0000001c  0000200e  LL    0x20 (D 32) //a=content(local_addr) ; local addr= operand0 + sp ;即a=(sp+32)=n;
 00000020  00000440  SL    0x4 (D 4)  //*(local_addr)=a; local_addr = operand0 + sp即*(sp+4)=a;
 root/usr/funcall.c  15:   while (i--)
-00000024  00000003  JMP   <fwd>
+00000024  00000003  JMP   <fwd>   //JMP, // jump to operand0 offset, pc+=operand0
 root/usr/funcall.c  16:     out(f, *s++);
-00000028  0000180e  LL    0x18 (D 24)
-0000002c  ffffff57  SUBI  0xffffffff (D -1)
+00000028  0000180e  LL    0x18 (D 24)   //a=sp+24
+0000002c  ffffff57  SUBI  0xffffffff (D -1)   //a -= b/operand0/(operand0 + sp) a-=-1;
 00000030  00001840  SL    0x18 (D 24)
 00000034  ffffff1f  LXC   0xffffffff (D -1)
 00000038  0000009d  PSHA
