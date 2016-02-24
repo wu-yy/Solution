@@ -53,7 +53,7 @@ root/usr/funcall.c  10: int write(int f, char *s, int n)
 root/usr/funcall.c  11: {
 root/usr/funcall.c  12:   int i;
 root/usr/funcall.c  13:   ret = 1; 
-00000010  fffff801  ENT   0xfffffff8 (D -8)
+00000010  fffff801  ENT   0xfffffff8 (D -8) //栈顶指针
 00000014  00000123  LI    0x1 (D 1)
 00000018  00000045  SG    0x0 (D 0)
 root/usr/funcall.c  14:   i=n;
