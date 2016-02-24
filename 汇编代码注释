@@ -55,7 +55,7 @@ root/usr/funcall.c  12:   int i;
 root/usr/funcall.c  13:   ret = 1; 
 00000010  fffff801  ENT   0xfffffff8 (D -8) //栈顶指针
 00000014  00000123  LI    0x1 (D 1)
-00000018  00000045  SG    0x0 (D 0)
+00000018  00000045  SG    0x0 (D 0)  //(global_addr)=a; global_addr = operand0 + pc
 root/usr/funcall.c  14:   i=n;
 0000001c  0000200e  LL    0x20 (D 32)
 00000020  00000440  SL    0x4 (D 4)
