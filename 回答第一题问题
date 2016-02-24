@@ -1,2 +1,2 @@
 funcall的堆栈128M： ，工作在内核态；
-ret 放在	07bffff8 ，
+ret 放在000000,	00000084  00000045  SG    0x0 (D 0)，SG修改global_addr:0x84+0
