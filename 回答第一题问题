@@ -1,4 +1,17 @@
-funcall的堆栈120M： ，工作在内核态；
+缺省内存大小为128MB，可以通过启动参数"-m XXX"，设置为XXX MB大小． 在TLB中，设置了4个1MB大小页转换表（page translation buffer array）
+
+kernel read page translation table
+kernel write page translation table
+user read page translation table
+user write page translation table
+有两个指针tr/tw, tw指向内核态或用户态的read/write　page translation table．
+
+tr/tw[page number]=phy page number //页帧号
+还有一个tpage buffer array, 保存了所有tr/tw中的虚页号，这些虚页号是tr/tw数组中的index
+
+tpage[tpages++] = v //v是page number
+
+funcall的堆栈124M,4M存储代码： ，工作在内核态；
 ret 放在000000,	00000084  00000045  SG    0x0 (D 0)，SG修改global_addr:0x84+0
 funcall的字符串放在：   寻址：
 局部变量i 放在
