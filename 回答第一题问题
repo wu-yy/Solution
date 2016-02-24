@@ -1,1 +1,2 @@
-
+funcall的堆栈： ，工作在内核态；
+ret 放在0xfffffff1 ，
