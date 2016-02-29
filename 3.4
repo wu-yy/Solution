@@ -1,0 +1,4 @@
+通过分析lab1_ex0了解Linux应用的系统调用编写和含义。(w2l1)
+说明了objdump：-S 尽可能反汇编源代码 ，nm 搜寻elf符号信息，file的大致用途  strace -f -- follow forks strace跟踪进程的系统调用
+系统调用：安全，不允许应用程序直接访问内核程序
+与函数调用：用户态和内核态区别，系统特权指令:设置中断向量表，使能中断。系统输出“hello world”通过set_thread_area:设置栈 ，向内核调用syscall:write 
